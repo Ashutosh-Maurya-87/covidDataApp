@@ -1,9 +1,18 @@
 import React from "react";
+import axios from "axios";
 
 const CovidData = () => {
   //https://data.covid19india.org/v4/min/data.min.json this is api of covid
 
   const clickBtn = () => {
+    //const url = "https://data.covid19india.org/v4/min/data.min.json";
+    axios
+      .get("https://data.covid19india.org/v4/min/data.min.json")
+      .then((response) => {
+        const test = response.data;
+        console.log(test);
+      })
+      .catch((error) => {});
     console.log("testing btn ");
   };
 
